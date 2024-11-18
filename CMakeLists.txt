@@ -28,9 +28,20 @@ target_link_libraries(CubeDash ${OpenCV_LIBS})
 
 # Lier les bibliothèques SFML et Freetype
 target_link_libraries(CubeDash
+    # Pour MacOS
     "${SFML_DIR}/lib/libsfml-graphics.dylib"
     "${SFML_DIR}/lib/libsfml-window.dylib"
     "${SFML_DIR}/lib/libsfml-system.dylib"
+
+    # Pour Windows
+    # "${SFML_DIR}/lib/libsfml-graphics.dll"
+    # "${SFML_DIR}/lib/libsfml-window.dll"
+    # "${SFML_DIR}/lib/libsfml-system.dll"
+
+    # Pour Linux
+    # "${SFML_DIR}/lib/libsfml-graphics.so"
+    # "${SFML_DIR}/lib/libsfml-window.so"
+    # "${SFML_DIR}/lib/libsfml-system.so"
     ${FREETYPE_LIBRARIES}
 )
 
