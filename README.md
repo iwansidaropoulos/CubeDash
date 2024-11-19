@@ -8,9 +8,19 @@ Le projet CubeDash utilise **CMake** pour la gestion de la compilation multiplat
 
 ### Compilation et Configuration Cross-Platform
 
-Pour compiler CubeDash sur différentes plateformes, assurez-vous d'avoir les dépendances nécessaires (SFML, OpenCV, Freetype) et modifiez le fichier `CMakeLists.txt` :
-   - Pour **macOS**, les bibliothèques SFML doivent être liées via `.dylib`.
-   - Pour **Windows**, utilisez les `.dll` (lignes déjà commentées dans le fichier).
-   - Pour **Linux**, utilisez les `.so` (également commentées).
+Pour compiler CubeDash sur différentes plateformes, assurez-vous d'avoir les dépendances nécessaires (SFML, OpenCV, Freetype) et suivez les étapes ci-dessous :
 
-Décommentez la section correspondant à votre plateforme et commentez les autres.
+1. **Modification de `CMakeLists.txt`** :
+   - **macOS** : Les bibliothèques SFML doivent être liées via `.dylib` (sections déjà actives dans `CMakeLists.txt`).
+   - **Windows** : Décommentez les lignes utilisant les `.dll` dans `CMakeLists.txt` et commentez les autres.
+   - **Linux** : Décommentez les lignes utilisant les `.so` dans `CMakeLists.txt` et commentez les autres.
+
+2. **Ajout des bibliothèques nécessaires** :
+   - **Téléchargement des fichiers SFML** : 
+     - Les fichiers SFML requis pour chaque plateforme peuvent être téléchargés depuis [le site officiel de SFML](https://www.sfml-dev.org/download-fr.php).
+   - **Windows** :
+     - Copiez les fichiers `.dll` nécessaires dans le dossier `dependencies/lib`.
+   - **Linux** :
+     - Copiez les fichiers `.so` nécessaires dans `dependencies/lib`.
+
+Avec ces étapes, CubeDash sera correctement configuré pour votre plateforme.
